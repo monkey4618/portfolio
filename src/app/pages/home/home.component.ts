@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { HeaderComponent } from "../../shared/component/header/header.component";
+import { SwiperContainer, SwiperSlide } from 'swiper/element';
 
 @Component({
   selector: 'app-home',
