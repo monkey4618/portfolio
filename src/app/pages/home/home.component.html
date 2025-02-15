@@ -1,5 +1,5 @@
 <div>
-  <app-header></app-header>
+  
   <div class="px-4 mx-auto my-10 max-w-7xl sm:px-6 lg:px-8">
     <h1 class="flex justify-center font-extrabold tracking-widest text-8xl">
       <span>Juan James</span>
@@ -122,25 +122,27 @@
       </div>
 
       <div class="flex flex-col gap-10 mt-10">
-        <div class="flex justify-between">
-          <div class="w-2/5">
-            <label for="fullName" class="text-xl">Full Name</label>
-            <input type="text" name="fullName" class="w-full text-2xl border-b-2 outline-none customized-input border-slate-700" placeholder="Enter Your Name">
+        <form [formGroup]="mailForm">
+          <div class="flex justify-between">
+            <div class="w-2/5">
+              <label for="fullName" class="text-xl">Full Name</label>
+              <input type="text" name="fullName" formControlName="fullName" class="w-full text-2xl border-b-2 outline-none customized-input border-slate-700" placeholder="Enter Your Name">
+            </div>
+            <div class="w-2/5">
+              <label for="mail" class="text-xl">Mail</label>
+              <input type="text" name="mail" formControlName="mail" class="w-full text-2xl border-b-2 outline-none customized-input border-slate-700" placeholder="Enter Mail">
+            </div>
           </div>
-          <div class="w-2/5">
-            <label for="mail" class="text-xl">Mail</label>
-            <input type="text" name="mail" class="w-full text-2xl border-b-2 outline-none customized-input border-slate-700" placeholder="Enter Mail">
+          <div class="flex items-center gap-10">
+            <div class="w-full">
+              <label for="message" class="text-xl">Message</label>
+              <textarea name="message" rows="3" placeholder="Don't Be Shy, Write A Sweet Message &#10;And Send it Now" class="w-full text-2xl border-b-2 outline-none customized-input border-slate-700" formControlName="message"></textarea>
+            </div>
+            <div>
+              <button class="px-10 py-2 border-none rounded-lg bg-slate-900 hover:bg-slate-600 active:bg-slate-700" (click)="onSubmitMail()">Send</button>
+            </div>
           </div>
-        </div>
-        <div class="flex items-center gap-10">
-          <div class="w-full">
-            <label for="message" class="text-xl">Message</label>
-            <textarea name="message" rows="3" placeholder="Don't Be Shy, Write A Sweet Message &#10;And Send it Now" class="w-full text-2xl border-b-2 outline-none customized-input border-slate-700"></textarea>
-          </div>
-          <div>
-            <button class="px-10 py-2 border-none rounded-lg bg-slate-900 hover:bg-slate-600 active:bg-slate-700">Send</button>
-          </div>
-        </div>
+        </form>
       </div>
     </div>
 
